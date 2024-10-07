@@ -1,10 +1,14 @@
 import React from 'react';
 
-const Notifications = () => {
+const Notifications = ({ notifications }) => {
   return (
     <div>
       <h2>Notifications</h2>
-      {/* Add notifications logic here */}
+      <ul>
+        {notifications.map((notification, index) => (
+          <li key={index}>{notification}</li>
+        ))}
+      </ul>
     </div>
   );
 };

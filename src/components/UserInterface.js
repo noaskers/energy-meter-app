@@ -4,7 +4,7 @@ const UserInterface = () => {
   return (
     <div>
       <h2>User Interface</h2>
-      {/* Add user interface logic here */}
+      <p>This is a simple and clear user interface.</p>
     </div>
   );
 };

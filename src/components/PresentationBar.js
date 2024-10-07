@@ -1,10 +1,9 @@
 import React from 'react';
 
-const PresentationBar = () => {
+const PresentationBar = ({ energyConsumption }) => {
   return (
     <div>
-      <h2>Presentation Bar</h2>
-      {/* Add presentation bar logic here */}
+      <h2>Current Energy Consumption: {energyConsumption} kWh</h2>
     </div>
   );
 };

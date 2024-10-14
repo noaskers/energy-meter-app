@@ -8,7 +8,6 @@ $(document).ready(function() {
         { usage: 10, name: '10 kWh Verbruiker' },
         { usage: 20, name: '20 kWh Verbruiker' },
         { usage: 30, name: '30 kWh Verbruiker' },
-        { usage: 40, name: '40 kWh Verbruiker' },
         // Add more badges as needed
     ];
 
@@ -24,11 +23,16 @@ $(document).ready(function() {
         $badgesContainer.empty();
         badgeCriteria.forEach((badge, index) => {
             const $badge = $('<div>').addClass('badge');
-            if (currentUsage >= badge.usage) {
+            if (badges.includes(badge.name)) {
                 $badge.addClass('completed');
             }
             $badgesContainer.append($badge);
         });
+    }
+
+    function showBadgePopup(badgeName) {
+        $('#popup-message').text(`Congratulations! You've earned the badge: ${badgeName}`);
+        $('#popup').removeClass('hidden');
     }
 
     $('#increase-usage').click(function() {
@@ -37,6 +41,7 @@ $(document).ready(function() {
         badgeCriteria.forEach(badge => {
             if (currentUsage >= badge.usage && !badges.includes(badge.name)) {
                 badges.push(badge.name);
+                showBadgePopup(badge.name);
             }
         });
         updateDisplay();
@@ -48,6 +53,10 @@ $(document).ready(function() {
             score -= 5;
             updateDisplay();
         }
+    });
+
+    $('#popup-close').click(function() {
+        $('#popup').addClass('hidden');
     });
 
     updateDisplay();

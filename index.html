@@ -10,24 +10,30 @@
 
 <body>
     <h1>Energy Meter App</h1>
-    <div id="energy-meter">
+    <div class="energy-meter">
         <h2>Energy Meter</h2>
-        <p>Huidig verbruik: <span id="current-usage">0</span> kWh</p>
-        <button id="increase-usage">Verbruik verhogen</button>
-        <button id="decrease-usage">Verbruik verlagen</button>
+        <p>Huidig verbruik: <span class="current-usage">0</span> kWh</p>
+        <button class="increase-usage">Verbruik verhogen</button>
+        <button class="decrease-usage">Verbruik verlagen</button>
     </div>
-    <div id="gamification">
+    <div class="gamification">
         <h2>Gamification</h2>
-        <p>Score: <span id="score">0</span></p>
-        <div id="badges-container">
+        <p>Score: <span class="score">0</span></p>
+        <div class="badges-container">
             <!-- Badges will be dynamically added here -->
         </div>
     </div>
-    <div id="winkel">
-        <h2>winkel</h2>
-        <p>Score: <span id="score">0</span></p>
-        <div id="badges-container">
+    <div class="winkel">
+        <h2>Winkel</h2>
+        <p>Score: <span class="score">0</span></p>
+        <div class="winkel-container">
             <!-- Badges will be dynamically added here -->
+        </div>
+    </div>
+    <div class="popup hidden">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <p class="popup-message"></p>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

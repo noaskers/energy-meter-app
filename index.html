@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Meter App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Energy Meter App</h1>
+    <div id="energy-meter">
+        <h2>Energy Meter</h2>
+        <p>Huidig verbruik: <span id="current-usage">0</span> kWh</p>
+        <button id="increase-usage">Verbruik verhogen</button>
+        <button id="decrease-usage">Verbruik verlagen</button>
+    </div>
+    <div id="gamification">
+        <h2>Gamification</h2>
+        <p>Score: <span id="score">0</span></p>
+        <div id="badges-container">
+            <!-- Badges will be dynamically added here -->
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

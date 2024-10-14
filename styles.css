@@ -9,7 +9,7 @@ h1 {
     color: #333;
 }
 
-#energy-meter, #gamification {
+#energy-meter, #gamification, #winkel {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -51,3 +51,4 @@ button:hover {
 .badge.completed {
     background-color: green;
 }
+

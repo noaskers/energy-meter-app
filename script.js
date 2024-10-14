@@ -15,6 +15,7 @@ $(document).ready(function() {
     function updateDisplay() {
         $('#current-usage').text(currentUsage);
         $('#score').text(score);
+        
         updateBadges();
     }
 

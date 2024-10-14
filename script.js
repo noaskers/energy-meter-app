@@ -8,6 +8,7 @@ $(document).ready(function() {
         { usage: 10, name: '10 kWh Verbruiker' },
         { usage: 20, name: '20 kWh Verbruiker' },
         { usage: 30, name: '30 kWh Verbruiker' },
+        { usage: 40, name: '40 kWh Verbruiker' },
         // Add more badges as needed
     ];
 

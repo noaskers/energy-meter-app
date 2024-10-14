@@ -47,6 +47,11 @@ $(document).ready(function() {
         $('.popup').removeClass('hidden');
     }
 
+    function boughtItemPopup(itemBought) {
+        $('.popup-message').text(`${itemBought}`);
+        $('.popup').removeClass('hidden');
+    }
+
     $('.increase-usage').click(function() {
         currentUsage += 1;
         score += 10;
@@ -77,10 +82,12 @@ $(document).ready(function() {
         if (winkelScore >= cost) {
             winkelScore -= cost;
             badgeColor = 'red';
+            buymessage = 'You bought color ' + badgeColor
             updateDisplay();
         } else {
-            alert('Niet genoeg punten om dit item te kopen.');
+            buymessage = 'Not enough coins';
         }
+        boughtItemPopup(`${buymessage}`);
     });
 
     updateDisplay();

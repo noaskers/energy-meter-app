@@ -77,7 +77,21 @@ $(document).ready(function() {
         $('.popup').addClass('hidden');
     });
 
-    $('.buy-item').click(function() {
+    $('.buy-item-blue').click(function() {
+        const cost = $(this).data('cost');
+        if (winkelScore >= cost) {
+            winkelScore -= cost;
+            badgeColor = 'blue';
+            buymessage = 'You bought color ' + badgeColor
+            updateDisplay();
+        } else {
+            buymessage = 'Not enough coins';
+        }
+        boughtItemPopup(`${buymessage}`);
+    });
+    
+
+    $('.buy-item-red').click(function() {
         const cost = $(this).data('cost');
         if (winkelScore >= cost) {
             winkelScore -= cost;
@@ -89,6 +103,8 @@ $(document).ready(function() {
         }
         boughtItemPopup(`${buymessage}`);
     });
+
+
 
     updateDisplay();
 });

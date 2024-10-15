@@ -56,6 +56,11 @@ button:hover {
     background-color: red;
 }
 
+.badge.blue {
+    background-color: blue;
+}
+
+
 .popup {
     position: fixed;
     top: 0;

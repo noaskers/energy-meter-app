@@ -12,8 +12,9 @@ $current_usage = $_POST['current_usage'];
 $score = $_POST['score'];
 $winkel_score = $_POST['winkel_score'];
 $badges = $_POST['badges'];
+$badge_color = $_POST['badge_color'];
 
-$sql = "UPDATE scores SET current_usage='$current_usage', score='$score', winkel_score='$winkel_score' WHERE user_id='$user_id'";
+$sql = "UPDATE scores SET current_usage='$current_usage', score='$score', winkel_score='$winkel_score', badge_color='$badge_color' WHERE user_id='$user_id'";
 $conn->query($sql);
 
 $sql = "DELETE FROM badges WHERE user_id='$user_id'";

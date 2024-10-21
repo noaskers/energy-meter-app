@@ -63,7 +63,7 @@ $(document).ready(function() {
     $('.decrease-usage').click(function() {
         if (currentUsage > 0) {
             currentUsage -= 1;
-            score -= 10;
+            score -= 5;
             updateDisplay();
             saveData();
         }

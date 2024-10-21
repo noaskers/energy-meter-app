@@ -1,10 +1,4 @@
 $(document).ready(function() {
-    let currentUsage = parseInt($('.current-usage').text());
-    let score = parseInt($('.score').text());
-    let winkelScore = parseInt($('.winkel-score').text());
-    let badges = [];
-    let badgeColor = 'green';
-
     const badgeCriteria = [
         { usage: 10, name: '10 kWh Verbruiker' },
         { usage: 20, name: '20 kWh Verbruiker' },
@@ -34,6 +28,8 @@ $(document).ready(function() {
                 $badge.addClass('completed');
                 if (badgeColor === 'red') {
                     $badge.addClass('red');
+                } else if (badgeColor === 'blue') {
+                    $badge.addClass('blue');
                 }
             }
             $badgesContainer.append($badge);
@@ -67,7 +63,7 @@ $(document).ready(function() {
     $('.decrease-usage').click(function() {
         if (currentUsage > 0) {
             currentUsage -= 1;
-            score -= 5;
+            score -= 10;
             updateDisplay();
             saveData();
         }
@@ -113,7 +109,8 @@ $(document).ready(function() {
                 current_usage: currentUsage,
                 score: score,
                 winkel_score: winkelScore,
-                badges: badges
+                badges: badges,
+                badge_color: badgeColor
             },
             success: function(response) {
                 console.log('Data saved successfully');

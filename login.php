@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-login">
         <h1>Login</h1>
         <form method="POST" action="login.php">
             <input type="text" name="username" placeholder="Username" required>

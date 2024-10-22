@@ -1,51 +1,75 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
-}
-
-h1 {
-    text-align: center;
     color: #333;
 }
 
-.energy-meter, .gamification, .winkel {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 20px 0;
+.container {
+    width: 80%;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.energy-meter h2, .gamification h2, .winkel h2 {
-    color: #007BFF;
-}
-
-button {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.badges-container {
+/* Header */
+.header {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
     gap: 10px;
 }
 
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Badges Container */
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .badge {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
 }
 
 .badge.completed {
@@ -60,7 +84,60 @@ button:hover {
     background-color: blue;
 }
 
+/* User Info Page */
+.user-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
 
+.user-info h2 {
+    margin-top: 0;
+}
+
+.user-info p {
+    margin: 10px 0;
+}
+
+.user-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.user-info label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.user-info input[type="text"],
+.user-info input[type="email"],
+.user-info input[type="date"],
+.user-info input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-info button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.user-info button:hover {
+    background-color: #0056b3;
+}
+
+/* Popup */
 .popup {
     position: fixed;
     top: 0;
@@ -71,7 +148,6 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
 }
 
 .popup.hidden {
@@ -79,17 +155,74 @@ button:hover {
 }
 
 .popup-content {
-    background-color: white;
+    background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
-    position: relative;
 }
 
-.popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="file"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.badges-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.badge.completed {
+    background-color: green;
+}
+
+.badge.red {
+    background-color: red;
+}
+
+.badge.blue {
+    background-color: blue;
+}
+
+.user-info {
+    margin-top: 20px;
+}
+
+.user-info img {
+    max-width: 150px;
+    border-radius: 8px;
 }

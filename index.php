@@ -48,35 +48,42 @@ $badge_color = $_SESSION['badge_color'];
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Energy Meter App</h1>
-    <a href="logout.php">Logout</a>
-    <div class="energy-meter">
-        <h2>Energy Meter</h2>
-        <p>Huidig verbruik: <span class="current-usage"><?php echo $current_usage; ?></span> kWh</p>
-        <button class="increase-usage">Verbruik verhogen</button>
-        <button class="decrease-usage">Verbruik verlagen</button>
-    </div>
-    <div class="gamification">
-        <h2>Gamification</h2>
-        <p>Score: <span class="score"><?php echo $score; ?></span></p>
-        <div class="badges-container">
-            <?php foreach ($badges as $badge): ?>
-                <div class="badge completed <?php echo $badge_color; ?>"><?php echo $badge; ?></div>
-            <?php endforeach; ?>
+    <div class="header">
+        <h1>Energy Meter App</h1>
+        <div class="header-buttons">
+            <a href="logout.php" class="button">Logout</a>
+            <button class="button" onclick="window.location.href='user.php'">Gebruiker</button>
         </div>
     </div>
-    <div class="winkel">
-        <h2>Winkel</h2>
-        <p>Winkel Score: <span class="winkel-score"><?php echo $winkel_score; ?></span></p>
-        <div class="winkel-container">
-            <button class="buy-item-red" data-cost="50">Koop Badge Kleur Veranderaar (50 punten)</button>
-            <button class="buy-item-blue" data-cost="150">Koop Badge Kleur Veranderaar (150 punten)</button>
+    <div class="container">
+        <div class="energy-meter">
+            <h2>Energy Meter</h2>
+            <p>Huidig verbruik: <span class="current-usage"><?php echo $current_usage; ?></span> kWh</p>
+            <button class="increase-usage button">Verbruik verhogen</button>
+            <button class="decrease-usage button">Verbruik verlagen</button>
         </div>
-    </div>
-    <div class="popup hidden">
-        <div class="popup-content">
-            <span class="popup-close">&times;</span>
-            <p class="popup-message"></p>
+        <div class="gamification">
+            <h2>Gamification</h2>
+            <p>Score: <span class="score"><?php echo $score; ?></span></p>
+            <div class="badges-container">
+                <?php foreach ($badges as $badge): ?>
+                    <div class="badge completed <?php echo $badge_color; ?>"><?php echo $badge; ?></div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div class="winkel">
+            <h2>Winkel</h2>
+            <p>Winkel Score: <span class="winkel-score"><?php echo $winkel_score; ?></span></p>
+            <div class="winkel-container">
+                <button class="buy-item-blue button" data-cost="50">Buy Blue Badge (50 coins)</button>
+                <button class="buy-item-red button" data-cost="100">Buy Red Badge ( coins)</button>
+            </div>
+        </div>
+        <div class="popup hidden">
+            <div class="popup-content">
+                <p class="popup-message"></p>
+                <button class="popup-close button">Close</button>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

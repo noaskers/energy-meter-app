@@ -70,6 +70,7 @@ body {
     align-items: center;
     color: #fff;
     font-weight: bold;
+    border: 0px;
 }
 
 .badge.completed {

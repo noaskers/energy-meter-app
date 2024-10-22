@@ -84,6 +84,11 @@ body {
     background-color: blue;
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
 /* User Info Page */
 .user-info {
     background-color: #fff;

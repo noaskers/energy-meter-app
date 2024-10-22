@@ -77,6 +77,7 @@ $badge_color = $_SESSION['badge_color'];
             <div class="winkel-container">
                 <button class="buy-item-blue button" data-cost="50">Buy Blue Badge (50 coins)</button>
                 <button class="buy-item-red button" data-cost="100">Buy Red Badge ( coins)</button>
+                <button id="buy-dark-mode-button" class="button" data-cost="150">Buy Dark Mode (150 coins)</button>
             </div>
         </div>
         <div class="popup hidden">
@@ -93,6 +94,15 @@ $badge_color = $_SESSION['badge_color'];
         let winkelScore = <?php echo $winkel_score; ?>;
         let badges = <?php echo json_encode($badges); ?>;
         let badgeColor = '<?php echo $badge_color; ?>';
+    </script>
+    <script>
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Add event listener to the dark mode button
+        document.getElementById('buy-dark-mode-button').addEventListener('click', toggleDarkMode);
     </script>
     <script src="script.js"></script>
 </body>

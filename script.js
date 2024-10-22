@@ -89,12 +89,29 @@ $(document).ready(function() {
 
     $('.buy-item-red').click(function() {
         const cost = $(this).data('cost');
+        const bodyElement = document.querySelector('body')
         if (winkelScore >= cost) {
             winkelScore -= cost;
             badgeColor = 'red';
             buymessage = 'You bought color ' + badgeColor;
+            bodyElement.style.background = 'black'
             updateDisplay();
             saveData();
+        } else {
+            buymessage = 'Not enough coins';
+        }
+        boughtItemPopup(`${buymessage}`);
+    });
+
+    $('.buy-item-black').click(function() {
+        const cost = $(this).data('cost');
+        if (winkelScore >= cost) {
+            winkelScore -= cost;
+            badgeColor = 'white';
+            buymessage = 'You bought color ' + badgeColor;
+            updateDisplay();
+            saveData();
+            
         } else {
             buymessage = 'Not enough coins';
         }
